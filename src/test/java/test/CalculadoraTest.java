@@ -17,7 +17,7 @@ public class CalculadoraTest {
     
     @Test
     void testSuma(){
-        assertEquals(5, calc.sumar(2, 3));
+        assertEquals(5, calc.sumar(2, 2));
     }
     
     @Test
@@ -30,9 +30,19 @@ public class CalculadoraTest {
         assertEquals(8, calc.multiplicar(16, 2));
     }
     
+    @Test
+    void testRestar(){
+        assertEquals(2, calc.restar(6, 4));
+    }
     
     
+    @Test
+    void testPotencia(){
+        assertEquals(16, calc.potencia(2.0, 4.0));
+    }
     
-    
-    
+    @Test 
+    void testRaizCuadrada(){
+        assertEquals(Math.sqrt(50), calc.raizCuadrada(50.0));
+    }
 }

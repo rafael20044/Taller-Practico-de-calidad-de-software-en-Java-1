@@ -21,4 +21,15 @@ public class Calculadora {
         return  a * b;
     }
     
+    public int restar (int a, int b){
+        return a - b;
+    }
+    
+    public Double potencia (Double a, Double b){
+        return Math.pow(a, b) ;
+    }
+    
+    public Double raizCuadrada(Double a){
+        return Math.sqrt(a);
+    }
 }
