@@ -45,4 +45,15 @@ public class CalculadoraTest {
     void testRaizCuadrada(){
         assertEquals(Math.sqrt(50), calc.raizCuadrada(50.0));
     }
+    
+    @Test
+    void testDividirPorCero(){
+        var e = assertThrows(IllegalArgumentException.class, ()-> calc.dividir(1, 0));
+        assertEquals("", e.getMessage());
+    }
+    
+    @Test
+    void testPromedioEntreCuatroNumeros(){
+        assertEquals(2, calc.promedioEntreCuatroNumeros(1, 2, 3, 4));
+    }
 }
