@@ -47,9 +47,9 @@ public class CalculadoraTest {
     }
     
     @Test
-    void testDividirPorCero(){
+    void testDividirEntreCero(){
         var e = assertThrows(IllegalArgumentException.class, ()-> calc.dividir(1, 0));
-        assertEquals("", e.getMessage());
+        assertEquals("No se puede dividir entre 0", e.getMessage());
     }
     
     @Test
