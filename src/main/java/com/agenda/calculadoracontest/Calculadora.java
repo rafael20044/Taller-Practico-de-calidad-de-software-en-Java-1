@@ -9,8 +9,13 @@ package com.agenda.calculadoracontest;
  * @author aleja
  */
 public class Calculadora {
-    public int sumar (int a , int b){
-        return  a + b;
+    public int sumar (String a  , String b){
+        try {
+            return Integer.parseInt(a) + Integer.parseInt(b);
+        } catch (NumberFormatException e) {
+            throw  new IllegalArgumentException("Los datos a ingresar tiennen que ser numeros enteros");
+        }
+        
     }
     
     public double dividir (int a , int b){
@@ -23,6 +28,7 @@ public class Calculadora {
     
     public int restar (int a, int b){
         return a - b;
+        
     }
     
     public Double potencia (Double a, Double b){

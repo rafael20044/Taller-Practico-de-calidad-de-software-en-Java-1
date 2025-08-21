@@ -13,18 +13,34 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Rafael Barragán Acevedo
  */
 public class CalculadoraTest {
+
     Calculadora calc = new Calculadora();
-    
+
     @Test
-    void testSuma(){
-        assertEquals(4, calc.sumar(2, 2), "Al realizar la operacion  nuestro resultado de 2 + 2 tiene que ser igual a 4");
-        assertEquals(-5, calc.sumar(-2, -3), "Al realizar la operacion  nuestro resultado de -2 + -3 tiene que ser igual a -5");
-        assertEquals(4, calc.sumar(5, -1) , "Al realizar la operacion  nuestro resultado de 5 + -1 tiene que ser igual a 4");
-        assertEquals(3, calc.sumar(0, 3), "Al realizar la operacion  nuestro resultado de 0 + 3 tiene que ser igual a 0");
-        
-    }   
-    
+    void testSuma() {
+        assertEquals(4, calc.sumar("2", "2"), "Al realizar la operacion  nuestro resultado de 2 + 2 tiene que ser igual a 4");
+    }
+
     @Test
+    void testSumaNegativos() {
+        assertEquals(-5, calc.sumar("-2", "-3"), "Al realizar la operacion  nuestro resultado de -2 + -3 tiene que ser igual a -5");
+    }
+
+    @Test
+    void testSumaPositivoNegativo() {
+        assertEquals(4, calc.sumar("5", "-1"), "Al realizar la operacion  nuestro resultado de 5 + -1 tiene que ser igual a 4");
+    }
+
+    @Test
+    void testSumaConStringsNovalidos() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            calc.sumar("m", "4");
+        });
+    }
+
+//*******************************************************************************************************************
+
+@Test
     void testMultiplicar(){
         assertEquals(6, calc.multiplicar(2, 3));
     }
@@ -51,8 +67,12 @@ public class CalculadoraTest {
     }
     
     @Test
-    void testDividirEntreCero(){
-        var e = assertThrows(IllegalArgumentException.class, ()-> calc.dividir(1, 0));
+    
+
+void testDividirEntreCero(){
+        var e = assertThrows(IllegalArgumentException.class  
+
+, ()-> calc.dividir(1, 0));
         assertEquals("No se puede dividir entre 0", e.getMessage());
     }
     
