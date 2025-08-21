@@ -17,8 +17,12 @@ public class CalculadoraTest {
     
     @Test
     void testSuma(){
-        assertEquals(5, calc.sumar(2, 2));
-    }
+        assertEquals(4, calc.sumar(2, 2), "Al realizar la operacion  nuestro resultado de 2 + 2 tiene que ser igual a 4");
+        assertEquals(-5, calc.sumar(-2, -3), "Al realizar la operacion  nuestro resultado de -2 + -3 tiene que ser igual a -5");
+        assertEquals(4, calc.sumar(5, -1) , "Al realizar la operacion  nuestro resultado de 5 + -1 tiene que ser igual a 4");
+        assertEquals(3, calc.sumar(0, 3), "Al realizar la operacion  nuestro resultado de 0 + 3 tiene que ser igual a 0");
+        
+    }   
     
     @Test
     void testMultiplicar(){
