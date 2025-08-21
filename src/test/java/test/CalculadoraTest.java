@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CalculadoraTest {
 
     Calculadora calc = new Calculadora();
-
+      //*******************************tests de sumas******************************* 
     @Test
     void testSuma() {
         assertEquals(4, calc.sumar("2", "2"), "Al realizar la operacion  nuestro resultado de 2 + 2 tiene que ser igual a 4");
@@ -38,21 +38,37 @@ public class CalculadoraTest {
         });
     }
 
-//*******************************************************************************************************************
+    //*******************************tests de multiplicar*******************************  
 
 @Test
     void testMultiplicar(){
         assertEquals(6, calc.multiplicar(2, 3));
     }
-    
+    //*******************************tests de divicion*******************************  
     @Test
     void testDividir(){
         assertEquals(8, calc.multiplicar(16, 2));
     }
-    
+    //*******************************test de resta*******************************  
     @Test
     void testRestar(){
-        assertEquals(2, calc.restar(6, 4));
+        assertEquals(2, calc.restar("6", "4"),"Al realizar la operacion  nuestro resultado de 6-4 tiene que ser igual a 2");
+    }
+
+    @Test
+    void testRestarNumerosPositivos(){
+        assertEquals(2, calc.restar("+6", "+4"),"Al realizar la operacion  nuestro resultado de (+6)-(+4) tiene que ser igual a 2");
+    }
+
+    @Test
+    void testRestarNumeroPositivo(){
+        assertEquals(2, calc.restar("6", "+4"),"Al realizar la operacion  nuestro resultado de 6-(+4) tiene que ser igual a 2");
+    }
+    @Test
+    void testRestarConStringsNovalidos() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            calc.sumar("m", "4");
+        });
     }
     
     

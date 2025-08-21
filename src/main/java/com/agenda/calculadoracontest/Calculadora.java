@@ -26,8 +26,12 @@ public class Calculadora {
         return  a * b;
     }
     
-    public int restar (int a, int b){
-        return a - b;
+    public int restar (String a, String b){
+        try {
+            return Integer.parseInt(a) - Integer.parseInt(b);
+        } catch (NumberFormatException e) {
+            throw  new IllegalArgumentException("Los datos a ingresar tiennen que ser numeros enteros");
+        }
         
     }
     
