@@ -13,7 +13,7 @@ public class Calculadora {
         return  a + b;
     }
     
-    public int dividir (int a , int b){
+    public double dividir (int a , int b){
         if (b == 0 ) throw  new IllegalArgumentException( " no se puede dividir entre cero");
         return  a / b;
     }
@@ -31,5 +31,9 @@ public class Calculadora {
     
     public Double raizCuadrada(Double a){
         return Math.sqrt(a);
+    }
+    
+    public double promedioEntreCuatroNumeros(int n1, int n2, int n3, int n4){
+        return (n1 + n2+ n3 + n4)/4;
     }
 }

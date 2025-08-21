@@ -46,5 +46,14 @@ public class CalculadoraTest {
         assertEquals(Math.sqrt(50), calc.raizCuadrada(50.0));
     }
     
+    @Test
+    void testDividirEntreCero(){
+        var e = assertThrows(IllegalArgumentException.class, ()-> calc.dividir(1, 0));
+        assertEquals("No se puede dividir entre 0", e.getMessage());
+    }
     
+    @Test
+    void testPromedioEntreCuatroNumeros(){
+        assertEquals(2, calc.promedioEntreCuatroNumeros(1, 2, 3, 4));
+    }
 }
