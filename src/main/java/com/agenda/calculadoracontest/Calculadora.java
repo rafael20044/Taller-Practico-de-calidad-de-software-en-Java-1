@@ -20,7 +20,7 @@ public class Calculadora {
     
     public double dividir (int a , int b){
         if (b == 0 ) throw  new IllegalArgumentException( " no se puede dividir entre cero");
-        return  a / b;
+        return (double) a / b;
     }
     public int multiplicar (int a , int b){
         return  a * b;
@@ -44,6 +44,6 @@ public class Calculadora {
     }
     
     public double promedioEntreCuatroNumeros(int n1, int n2, int n3, int n4){
-        return (n1 + n2+ n3 + n4)/4;
+        return (n1 + n2+ n3 + n4)/4.0;
     }
 }
