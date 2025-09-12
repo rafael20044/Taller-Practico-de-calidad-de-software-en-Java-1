@@ -1,6 +1,6 @@
 # Proyecto: Pruebas Unitarias de la Clase `Calculadora`
 
-Este proyecto contiene un conjunto de **pruebas unitarias** desarrolladas con **JUnit 5** para validar el correcto funcionamiento de la clase `Calculadora`, la cual implementa diversas operaciones matemáticas básicas.
+Este proyecto contiene un conjunto de **pruebas unitarias** desarrolladas con **JUnit 5** para validar el correcto funcionamiento de la clase `Calculadora`, la cual implementa diversas operaciones matemáticas básicas .
 ---
 ## ⚙️ Tecnologías utilizadas
 
