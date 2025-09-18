@@ -40,3 +40,63 @@ Cada prueba usa **asserts** para comprobar que los resultados sean correctos.
 
 8. **Promedio entre cuatro números (`testPromedioEntreCuatroNumeros`)**  
    - Confirma que el método de promedio funcione adecuadamente.
+
+### ✅ Pruebas adicionales implementadas
+
+- **Suma con números negativos (`testSumaNegativos`)**  
+  Valida la operación de suma con números negativos.
+
+- **Suma de positivo y negativo (`testSumaPositivoNegativo`)**  
+  Evalúa la suma de un número positivo y uno negativo.
+
+- **Resta con cadenas válidas (`testRestar`)**  
+  Evalúa la operación de resta con cadenas de texto.
+
+- **Resta con signos (`testRestarNumerosPositivos`)**  
+  Evalúa la operación de resta con cadenas que incluyen signos positivos.
+
+- **Resta de positivo con positivo (`testRestarNumeroPositivo`)**  
+  Evalúa la resta con una cadena de texto sin signo y otra con signo positivo.
+
+- **Resta con cadenas no válidas (`testRestarConStringsNovalidos`)**  
+  Verifica que el método de resta lance una `IllegalArgumentException` al recibir entradas no numéricas.
+
+- **Prueba de integración (`testIntegracionPromedioConSuma`)**  
+  Combina los resultados de la suma y el promedio para verificar que funcionen juntos correctamente.
+
+- **Prueba de sistema (`testOperacionCompleta`)**  
+  Evalúa una secuencia de operaciones (suma, multiplicación y potencia) para validar un flujo de trabajo completo.
+
+- **Prueba de robustez (`testRobustezEntradasInvalidas`)**  
+  Prueba que los métodos de suma y resta lancen excepciones al recibir entradas no numéricas.
+
+- **Prueba de estrés (`testStressMultiplicacion`)**  
+  Ejecuta la operación de multiplicación 10,000 veces para evaluar el rendimiento bajo carga.
+
+- **Prueba de regresión (`testRegresionDivision`)**  
+  Asegura que un cambio reciente no haya roto la funcionalidad de división.
+
+---
+
+## 🚀 Flujo de Trabajo (Workflow)
+
+Este proyecto ha sido configurado con un flujo de trabajo de **GitHub Actions** que permite la automatización de pruebas y la integración continua (CI).
+
+### 📝 Archivo `ci.yml`
+
+El workflow se define en el archivo `.github/workflows/ci.yml`. Su propósito es:
+
+- Ejecutarse automáticamente en cada **push** y **pull_request** a la rama `main`.  
+- Utilizar una imagen de Docker con **Maven y JDK 21** preinstalados para un entorno de ejecución consistente.  
+- Correr el comando `mvn clean test` para compilar el código y ejecutar todas las pruebas unitarias.  
+
+---
+
+## 🐳 Ejecución Local con `act` y Docker
+
+Para simular el flujo de trabajo de GitHub Actions en un entorno local, se utilizaron **[nektos/act](https://github.com/nektos/act)** y Docker. Esto permite validar la configuración de CI antes de subir los cambios al repositorio.
+
+- **Validación de ejecución exitosa:** El flujo de trabajo se ejecutó localmente y pasó todas las pruebas, lo que confirma que el código y la configuración son correctos.  
+- **Validación de ejecución fallida:** Se modificó una prueba intencionalmente para que fallara, y la ejecución de `act` demostró que el workflow detecta y reporta los fallos correctamente.  
+
+---
