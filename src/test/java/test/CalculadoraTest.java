@@ -19,6 +19,7 @@ public class CalculadoraTest {
     // *******************************tests de sumas*******************************
     @Test
     void testSuma() {
+        
         assertEquals(4, calc.sumar("2", "2"),
                 "Al realizar la operacion  nuestro resultado de 2 + 2 tiene que ser igual a 4");
     }
@@ -93,12 +94,12 @@ public class CalculadoraTest {
         var e = assertThrows(IllegalArgumentException.class
 
                 , () -> calc.dividir(1, 0));
-        assertEquals("No se puede dividir entre 0", e.getMessage());
+        assertEquals(" no se puede dividir entre cero", e.getMessage());
     }
 
     @Test
     void testPromedioEntreCuatroNumeros() {
-        assertEquals(2.0, calc.promedioEntreCuatroNumeros(1, 2, 3, 4));
+        assertEquals(2.5, calc.promedioEntreCuatroNumeros(1, 2, 3, 4));
     }
 
     // Integration test
